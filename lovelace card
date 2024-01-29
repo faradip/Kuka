@@ -1,0 +1,49 @@
+type: horizontal-stack
+cards:
+  - type: vertical-stack
+    cards:
+      - card:
+          entity: sensor.fekete_kuka
+          name_template: '{{ states.sensor.fekete_kuka.attributes.days }} nap'
+          show_name: true
+          show_state: false
+          state_image:
+            '0': /local/kuka/general_today.png
+            '1': /local/kuka/general_tomorrow.png
+            '2': /local/kuka/general_off.png
+          type: picture-entity
+        entities:
+          - sensor.fekete_kuka
+        type: custom:card-templater
+  - type: vertical-stack
+    cards:
+      - card:
+          entity: sensor.barna_kuka
+          name_template: '{{ states.sensor.barna_kuka.attributes.days }} nap'
+          show_name: true
+          show_state: false
+          state_image:
+            '0': /local/kuka/bio_today.png
+            '1': /local/kuka/bio_tomorrow.png
+            '2': /local/kuka/bio_off.png
+          type: picture-entity
+        entities:
+          - sensor.barna_kuka
+        type: custom:card-templater
+  - type: vertical-stack
+    cards:
+      - card:
+          entity: sensor.szelektiv
+          name_template: '{{ states.sensor.szelektiv.attributes.days }} nap'
+          show_name: true
+          show_state: false
+          state_image:
+            '0': /local/kuka/paper_today.png
+            '1': /local/kuka/paper_tomorrow.png
+            '2': /local/kuka/paper_off.png
+          type: picture-entity
+        entities:
+          - sensor.szelektiv
+        type: custom:card-templater
+view_layout:
+  column: 3
